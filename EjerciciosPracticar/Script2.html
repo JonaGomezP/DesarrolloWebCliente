@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script 2</title>
+</head>
+<body>
+    <script>
+        //Bucle para permitir introducir más de una nota
+        do {
+            //Pedimos la nota por teclado y la guarda en la variable nota
+            var nota = prompt("Introduce tu nota")
+            nota = parseInt(nota);
+            //Convertimos la entrada de datos a number y comprobamos consigo misma
+            if(Number(nota) == nota){
+                //Empezamos las condiciones de las notas
+                if(nota >= 0 && nota <=10){
+                    if(nota >= 0 && nota < 3){
+                        alert("Muy deficiente")
+                    } else if(nota >= 3 && nota < 5){
+                        alert("Insuficiente")
+                    } else if(nota >= 5 && nota < 6){
+                        alert("Suficiente")
+                    } else if(nota >= 6 && nota < 8){
+                        alert("Bien")
+                    } else if(nota == 8){
+                        alert("Notable")
+                    } else if(nota >= 9){
+                        alert("Sobre saliente")
+                    }
+                }else{
+                    alert("Nota errónea");
+                }
+            }
+            //La nota no es entre 0 y 10
+            else{
+                //Si se pulsa "aceptar" sin introducir nada
+                if(nota != undefined){
+                    alert("Introduce un número válido");
+                }
+            }
+        } while (nota == undefined);
+    </script>
+</body>
+</html>
