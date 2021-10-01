@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Script 1</title>
+    <title>Script 1 (introducir número y puede conducir)</title>
 </head>
+
 <body>
     <script>
-        var edad = prompt("Escribe tu edad");
-
-        if(Number(edad) == edad){
-            if(edad >= 18){
-                document.write("Puedes conducir");
-            } else{
-                document.write("No puede conducir");
+        do {
+            var edad = prompt("Escribe tu edad");
+            edad = parseInt(edad);
+            if (Number(edad) == edad) {
+                if (edad >= 18) {
+                    document.write("Puedes conducir");
+                } else {
+                    document.write("No puede conducir");
+                }
+            } else {
+                alert("Introduce un número válido");
             }
-        } else{
-            alert("Introduce un número válido");
-        }
+        } while (edad == undefined);
+
+
     </script>
-    
+
 </body>
+
 </html>
