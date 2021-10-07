@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiniela</title>
+</head>
+
+<body>
+    <h1>Ejercicio 1</h1>
+    <script>
+        //Declaramos las variables a usar sin inicializarlas
+        let tmp;
+        let resultado;
+        //Comenzamos el bucle sabiendo las vueltas que se van a dar (14)
+        for (let i = 1; i <= 14; i++) {
+            //La variable tmp almacena un número aleatorio de 1 a 3
+            tmp = Math.round((Math.random() * 2) + 1);
+            //Condiciones si se cumple lo siguiente. Si tmp es 1, el resultado es 1, si es 2 el resultado es 2 y si es 3 el resultado es empate (X)
+            if (tmp == 1) {
+                resultado = tmp;
+            } else if (tmp == 2) {
+                resultado = tmp;
+            } else {
+                resultado = 'X';
+            }
+            //Se escribe en pantalla la línea con el resultado
+            document.write("Resultado " + i + ": " + resultado + "</br>");
+        }
+    </script>
+    <h1>Ejercicio 2</h1>
+    <script>
+        //Declaramos las variables a usar sin inicializarlas
+        let temp;
+        let res;
+        //Comenzamos el bucle sabiendo las vueltas que se van a dar (14)
+        for (let i = 1; i <= 14; i++) {
+            //La variable tmp almacena un número aleatorio de 1 a 100 porque ahora le damos más porcentaje al 1 y al empate, por lo que yo he sacado ese porcentaje aplicándolo con aleatorios del 1 (1%) al 100 (100%)
+            temp = Math.round((Math.random() * 99) + 1);
+            //Condiciones si se cumple lo siguiente. Si tmp está entre 1 y 60, el resultado es 1, si está entre 61 y 70 el resultado es 2 y si está entre 71 y 100 el resultado es empate (X)
+            if (temp >= 1 && temp <= 60) {
+                res = 1;
+            } else if (temp >= 61 && temp <= 70) {
+                res = 2;
+            } else {
+                res = 'X';
+            }
+            //Se escribe en pantalla la línea con el resultado
+            document.write("Resultado " + i + ": " + res + "</br>");
+        }
+    </script>
+</body>
+
+</html>
