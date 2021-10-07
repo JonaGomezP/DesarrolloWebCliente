@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edad del mayor</title>
+</head>
+
+<body>
+    <script>
+        let nombre = "";
+        let edad;
+        let tmpEdad = 0;
+        let tmpNombre = "";
+        for (let i = 0; i < 3; i++) {
+            nombre = prompt("Escribe tu nombre");
+            edad = prompt("Escribe tu edad");
+            if (edad > tmpEdad) {
+                tmpEdad = edad;
+                tmpNombre = nombre;
+            }
+        }
+        document.write("El mayor es " + tmpNombre + " con " + tmpEdad + " años");
+    </script>
+</body>
+
+</html>

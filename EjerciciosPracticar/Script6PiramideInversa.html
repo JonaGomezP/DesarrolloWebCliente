@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*Hacer una pirámide inversa del 1 al 30 así:
+                                        303030303030303030
+                                        2929292929292929
+                                        28282828282828
+                                        272727272727
+                                        2626262626
+                                        */
+        let contador = 0;
+        let piramide = "";
+
+        for (var i = 30; i >= contador; i--) {
+            for (var j = 1; j <= i; j++) {
+                piramide += i;
+            }
+            piramide += "\n";
+        }
+        alert(piramide);
+    </script>
+</body>
+
+</html>

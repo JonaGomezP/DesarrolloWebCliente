@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Números aleatorios entre 1 y 99</h1>
+    <script>
+        let aleatorio;
+        let tmp = 0;
+        for (let i = 0; i < 3; i++) {
+            aleatorio = Math.round((Math.random() * 98) + 1);
+            if (aleatorio != tmp) {
+                tmp = aleatorio;
+                document.write(tmp + "</br>");
+            } else {
+                document.write("Número repetido (" + tmp + ") </br>");
+            }
+        }
+    </script>
+</body>
+
+</html>

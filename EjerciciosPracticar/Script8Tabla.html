@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tabla</title>
+</head>
+
+<body>
+    <script>
+        //empezamos a imprimir la tabla
+        document.write("<table border>");
+        // Pedimos el numereo de filas y de columnas
+        let fila = prompt("Escriba el número de filas");
+        fila = parseInt(fila);
+        let columna = prompt("Escriba el número de columnas");
+        columna = parseInt(columna);
+        //Multiplicamos las filas por las columnas para saber cuantos números debe imprimir
+        let resultado = fila * columna;
+        for (let i = 0; i < fila; i++) {
+            document.write("<tr>");
+            for (let j = 0; j < columna; j++) {
+                document.write("<td>");
+                document.write(resultado + " ");
+                document.write("</td>");
+                resultado--;
+            }
+            document.write("</tr>");
+            document.write("<br>");
+        }
+    </script>
+</body>
+
+</html>
