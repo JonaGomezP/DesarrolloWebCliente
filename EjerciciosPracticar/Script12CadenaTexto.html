@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--Ejercicio 1-->
+    <h3>Ejercicio 1: Realiza un script que pida un texto y lo muestre en mayúsculas</h3>
+    <script>
+        //Pedimos cadena por pantalla y la almacenamos en la variable "texto"
+        let texto = prompt("Dime algo bonito");
+        //Esa cadena la almacenamos sobre sí misma pero pasándola a mayúsculas
+        textoMayus = texto.toUpperCase();
+        document.write(textoMayus);
+    </script>
+
+    <!--Ejercicio 2-->
+    <h3>Ejercicio 2: Escribir un guión entre las letras</h3>
+    <script>
+        //Este ejercicio lo he hecho también con un split para separar las palabras
+        let cadena = texto.split(' ');
+        for (let i = 0; i < cadena.length; i++) {
+            document.write(cadena[i] + "-");
+        }
+        document.write("</br>");
+        //Recorro con un for la cadena hasta su longitud y por cada valor de la i, le digo que muestre la letra que está en esa posición
+        for (let i = 0; i < texto.length; i++) {
+            document.write(texto.charAt(i) + "-");
+        }
+    </script>
+
+    <!--Ejercicio 3-->
+    <h3>Ejercicio 3: Contar las vocales de una cadena</h3>
+    <script>
+        //Inicializo un contador a 0
+        let contador = 0;
+        texto.toLowerCase();
+        //Recorro con un for la longitud de la cadena
+        for (let i = 0; i < texto.length; i++) {
+            //Con esta condición compruebo si en cada posición de la cadena que indica la i del bucle coincide con una vocal
+            if (texto.charAt(i) === 'a' || texto.charAt(i) === 'e' || texto.charAt(i) === 'i' || texto.charAt(i) === 'o' || texto.charAt(i) === 'u') {
+                contador++;
+            }
+        }
+        document.write("'" + texto + "' tiene " + contador + " vocales")
+    </script>
+
+    <!--Ejercicio 4-->
+    <h3>Ejercicio 4: devolver cadena al revés</h3>
+    <script>
+        //Recorro la cadena pero la i va a valer la longitud de la cadena, es decir, la recorro empezando por el final y muestro las letras que se encuentran en la posición de i empezando por el final
+        for (let i = texto.length; i >= 0; i--) {
+            document.write(texto.charAt(i));
+        }
+    </script>
+</body>
+
+</html>
