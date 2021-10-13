@@ -87,7 +87,7 @@
         let contador = 0;
         let numerosRepetidos = 0;
         for (let i = 0; i < 100; i++) {
-            aleatorio = Math.round(((Math.random() + 99) + 1));
+            aleatorio = Math.round(((Math.random() * 999) + 1));
             if (listaNumeros.includes(aleatorio)) {
                 numerosRepetidos++;
             } else {
@@ -95,10 +95,10 @@
                 contador++;
             }
         }
-        document.write('Se han mostrado ' + contador + ' números</br>');
+        document.write('Se han añadido ' + contador + ' números</br>');
         document.write('Se han repetido ' + numerosRepetidos + ' números</br>');
         for (let i = 0; i < listaNumeros.length; i++) {
-            document.write(listaNumeros[i]);
+            document.write(listaNumeros[i] + '</br>');
         }
     </script>
 
