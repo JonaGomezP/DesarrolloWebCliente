@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    let aleatorio = 0;
+    let numerosDado = {
+        1: 0,
+        2: 0,
+        3: 0,
+        4: 0,
+        5: 0,
+        6: 0
+    }
+    for (let i = 0; i <= 100; i++) {
+        aleatorio = Math.round(((Math.random() * 99) + 1));
+        numerosDado[aleatorio] = numerosDado[aleatorio] + 1;
+    }
+
+    for (var clave in numerosDado) {
+        document.write(clave + ': ' + numerosDado[clave] + ' veces');
+    }
+</script>
+
+<body>
+
+</body>
+
+</html>

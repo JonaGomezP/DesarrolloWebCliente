@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora Exacta</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var fecha = new Date();
+        //El slice(-2) es para que salgan las cifras con 2 digitos
+        var horas = ("0" + fecha.getHours()).slice(-2);
+        var minutos = ("0" + fecha.getMinutes()).slice(-2);
+        var segundos = ("0" + fecha.getSeconds()).slice(-2);
+        document.write("<h1>" + horas + ":" + minutos + ":" + segundos + "</h1>");
+    </script>
+</body>
+
+</html>

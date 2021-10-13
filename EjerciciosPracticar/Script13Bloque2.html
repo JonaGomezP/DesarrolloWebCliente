@@ -12,10 +12,12 @@
 
     <h3>Ejercicio 1: posición de la primera vocal</h3>
     <script>
+        //Pedimos una frase y la mostramos por pantalla
         let cadena = prompt("Ejercicio 1: Introduce una cadena de texto");
-        document.write('<h2>La cadena introducida es: ' +
-            cadena + '</h2></br>');
+        document.write('<h2>La cadena introducida es: ' + cadena + '</h2></br>');
+        //Iniciamos bucle for para recorrer la longitud de la cadena
         for (let i = 0; i <= cadena.length; i++) {
+            //Si el valor de la posición i de la cadena es una de las vocales, la variable del bucle la igualamos a la longitud de la cadena para que salga
             if (cadena.charAt(i).toLowerCase() == 'a' || cadena.charAt(i).toLowerCase() == 'e' || cadena.charAt(i).toLowerCase() == 'i' || cadena.charAt(i).toLowerCase() == 'o' || cadena.charAt(i).toLowerCase() == 'u') {
                 document.write('La primera vocal se encuentra en la posición ' + i + ' y es la letra ' + cadena.charAt(i));
                 i = cadena.length;
@@ -25,8 +27,10 @@
 
     <h3>Ejercicio 2: piedra, papel, tijera contra el PC</h3>
     <script>
+        //Pedimos un nombre de jugador y que elija una opción
         let nombre = prompt('Ejercicio 2: Introduce tu nombre ');
         let opcionUsuario = parseInt(prompt(nombre + ', elige una opción de las siguientes:\n1: piedra\n2: papel\n3: tijera\n'));
+        //Iniciamos switch para comprobar la opción y mostrarle al usuario lo que ha elegido
         switch (opcionUsuario) {
             case 1:
                 document.write('Has elegido piedra</br>');
@@ -40,6 +44,7 @@
             default:
                 break;
         }
+        //Hacemos que la máquina saque una opción aleatoria y la mostramos por pantalla
         document.write('La máquina está eligiendo opción...</br>');
         let opcionPC = Math.round((Math.random() * 2) +
             1);
@@ -55,8 +60,8 @@
             default:
                 break;
         }
-        if ((opcionUsuario ==
-                1 && opcionPC == 2) || (opcionUsuario == 2 && opcionPC == 3) || (opcionUsuario == 3 && opcionPC == 1)) {
+        //Condiciones: en función de las opciones sacadas (usuario y pc), gana uno u otro o empate y se muestra
+        if ((opcionUsuario == 1 && opcionPC == 2) || (opcionUsuario == 2 && opcionPC == 3) || (opcionUsuario == 3 && opcionPC == 1)) {
             document.write('Ha ganado la máquina</br>');
         } else if ((opcionUsuario == 1 && opcionPC == 3) || (opcionUsuario == 2 && opcionPC == 1) || (opcionUsuario ==
                 3 && opcionPC == 2)) {
@@ -68,12 +73,16 @@
 
     <h3>Ejercicio 3: precio e IVA</h3>
     <script>
+        //Pedimos un precio y el IVA. El precio lo ponemos en decimal con la función "toFixed()"
         let precio = parseFloat(prompt('¿Qué precio tiene?\n'));
+        precio = precio.toFixed(2);
         let iva = parseInt(prompt('Cuánto IVA quieres aplicarle a ' + precio + '€?\n'));
         let precioFinal = 0;
+        //Añadimos las condiciones. En caso de que no se introduzca el IVA, por defecto se aplica el 21%
         if (isNaN(iva)) {
             precioFinal = Math.round(precio * (1 + (21 / 100)));
             document.write('El precio final del producto con IVA es de ' + precioFinal + '€');
+            //Si no entra en la condición anterior, se aplica el IVA que ha querido el usuario
         } else {
             precioFinal = Math.round(precio * (1 + (iva / 100)));
             document.write('El precio final del producto con IVA es de ' + precioFinal + '€');
@@ -82,19 +91,25 @@
 
     <h3>Ejercicio 4: 100 números entre 1 y 1000</h3>
     <script>
+        //Definimos variables y las inicializamos
         let listaNumeros = new Array();
         let aleatorio = 0;
         let contador = 0;
         let numerosRepetidos = 0;
+        //Definimos un bucle for que dé 100 vueltas (cantidad de números solicitados)
         for (let i = 0; i < 100; i++) {
+            //En cada vuelta se genera un aleatorio entre 1 y 1000
             aleatorio = Math.round(((Math.random() * 999) + 1));
+            //Iniciamos las condiciones. Si el aleatorio generado ya está incluido en el array "listaNumeros" se aumenta +1 en el contador de números repetidos y no se añade al array
             if (listaNumeros.includes(aleatorio)) {
                 numerosRepetidos++;
+                //Si no está incluido el aleatorio, se añade y se aumenta el contador de números añadidos
             } else {
                 listaNumeros.push(aleatorio);
                 contador++;
             }
         }
+        //Mostramos en el documento los contadores (números repetidos y añadidos) y también recorremos el array de números para mostrar sus valores
         document.write('Se han añadido ' + contador + ' números</br>');
         document.write('Se han repetido ' + numerosRepetidos + ' números</br>');
         for (let i = 0; i < listaNumeros.length; i++) {
