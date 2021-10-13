@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloque 2</title>
+</head>
+
+<body>
+
+    <h3>Ejercicio 1: posición de la primera vocal</h3>
+    <script>
+        let cadena = prompt("Ejercicio 1: Introduce una cadena de texto");
+        document.write('<h2>La cadena introducida es: ' +
+            cadena + '</h2></br>');
+        for (let i = 0; i <= cadena.length; i++) {
+            if (cadena.charAt(i).toLowerCase() == 'a' || cadena.charAt(i).toLowerCase() == 'e' || cadena.charAt(i).toLowerCase() == 'i' || cadena.charAt(i).toLowerCase() == 'o' || cadena.charAt(i).toLowerCase() == 'u') {
+                document.write('La primera vocal se encuentra en la posición ' + i + ' y es la letra ' + cadena.charAt(i));
+                i = cadena.length;
+            }
+        }
+    </script>
+
+    <h3>Ejercicio 2: piedra, papel, tijera contra el PC</h3>
+    <script>
+        let nombre = prompt('Ejercicio 2: Introduce tu nombre ');
+        let opcionUsuario = parseInt(prompt(nombre + ', elige una opción de las siguientes:\n1: piedra\n2: papel\n3: tijera\n'));
+        switch (opcionUsuario) {
+            case 1:
+                document.write('Has elegido piedra</br>');
+                break;
+            case 2:
+                document.write('Has elegido papel</br>');
+                break;
+            case 3:
+                document.write('Has elegido tijera</br>');
+                break;
+            default:
+                break;
+        }
+        document.write('La máquina está eligiendo opción...</br>');
+        let opcionPC = Math.round((Math.random() * 2) +
+            1);
+        switch (opcionPC) {
+            case 1:
+                document.write('La máquina ha elegido piedra</br>');
+                break;
+            case 2:
+                document.write('La máquina ha elegido papel</br>');
+                break;
+            case 3:
+                document.write('La máquina ha elegido tijera</br>');
+            default:
+                break;
+        }
+        if ((opcionUsuario ==
+                1 && opcionPC == 2) || (opcionUsuario == 2 && opcionPC == 3) || (opcionUsuario == 3 && opcionPC == 1)) {
+            document.write('Ha ganado la máquina</br>');
+        } else if ((opcionUsuario == 1 && opcionPC == 3) || (opcionUsuario == 2 && opcionPC == 1) || (opcionUsuario ==
+                3 && opcionPC == 2)) {
+            document.write(nombre + 'ha ganado a la máquina</br>');
+        } else {
+            document.write('EMPATE!!!!</br>')
+        }
+    </script>
+
+    <h3>Ejercicio 3: precio e IVA</h3>
+    <script>
+        let precio = parseFloat(prompt('¿Qué precio tiene?\n'));
+        let iva = parseInt(prompt('Cuánto IVA quieres aplicarle a ' + precio + '€?\n'));
+        let precioFinal = 0;
+        if (isNaN(iva)) {
+            precioFinal = Math.round(precio * (1 + (21 / 100)));
+            document.write('El precio final del producto con IVA es de ' + precioFinal + '€');
+        } else {
+            precioFinal = Math.round(precio * (1 + (iva / 100)));
+            document.write('El precio final del producto con IVA es de ' + precioFinal + '€');
+        }
+    </script>
+
+    <h3>Ejercicio 4: 100 números entre 1 y 1000</h3>
+    <script>
+        let listaNumeros = new Array();
+        let aleatorio = 0;
+        let contador = 0;
+        let numerosRepetidos = 0;
+        for (let i = 0; i < 100; i++) {
+            aleatorio = Math.round(((Math.random() + 99) + 1));
+            if (listaNumeros.includes(aleatorio)) {
+                numerosRepetidos++;
+            } else {
+                listaNumeros.push(aleatorio);
+                contador++;
+            }
+        }
+        document.write('Se han mostrado ' + contador + ' números</br>');
+        document.write('Se han repetido ' + numerosRepetidos + ' números</br>');
+        for (let i = 0; i < listaNumeros.length; i++) {
+            document.write(listaNumeros[i]);
+        }
+    </script>
+
+</body>
+
+</html>
