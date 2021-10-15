@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="p1">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam assumenda itaque modi officiis ducimus a quisquam sequi quia. Ipsa hic unde reprehenderit a incidunt, nobis inventore expedita. Porro, magnam quos!
+    </p>
+
+    <button onclick="pulsar()">Púlsame papi
+
+    </button>
+
+    <button id="step" onclick="modificarVentana()">Stepbro i'm stuck</button>
+
+
+    <script>
+        var estilo;
+        var ventana;
+
+        function pulsar() {
+            estilo = document.getElementById('p1');
+            estilo.setAttribute("style", "color:aqua;border:1px solid black");
+            ventana = window.open("", "", "target: blanc");
+        }
+
+        function modificarVentana() {
+            ventana.resizeTo(900, 900);
+        }
+    </script>
+</body>
+
+</html>
