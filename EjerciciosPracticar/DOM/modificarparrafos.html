@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Poner un enlace dentro de un párrafo</title>
+
+</head>
+
+<body>
+
+    <p>1. Se ofrece trabajo de desarrollador de aplicaciones Web propias, tanto Front como Back end. Buscamos un perfil de un técnico informático programador de aplicaciones que sea capaz de adaptarse a los distintos requisitos de los proyectos que estamos
+        implementando, y que le guste aprender nuevas tecnologías.</p>
+
+    <p>2. Te integrarás en un equipo de desarrollo con un ambiente colaborativo, con un gran nivel humano y profesional. La libertad para utilizar nuevas tecnologías, y llevar a cabo las ideas que aportes a los proyectos te permitirá un gran crecimiento
+        profesional. </p>
+
+    <p>3. Software es líder en el sector de la educación aportando soluciones para la elaboración de horarios académicos, a través de nuestro propio software. Actualmente nos encontramos en fase de crecimiento con nuevos proyectos y servicios. Si crees que
+        esta oferta encaja con tu perfil de ingeniero/a técnico/a en informática, ¡no lo dudes e inscríbete! </p>
+
+    <p>4. Requisitos mínimos.</p>
+
+    <p>5. Aptitud para la programación y el desarrollo de aplicaciones informáticas. Con base académicas de Grado de Ingeniero o Grado Superior de FP se requiere facilidad para adaptarse y adquirir nuevos conocimientos.
+    </p>
+
+
+
+    <script>
+        //que en el tercer párrafo haya un enlace con el texto "+ info" creado con javacript y que enlace a https://medac.es
+
+        //que en el tercer párrafo haya un enlace con el texto "+ info" creado con javacript y que enlace a https://francescricart.com
+
+        var zParrafos = document.querySelectorAll("p") //array de nodos párrafo;
+
+        var zEnlace = document.createElement("a");
+        zEnlace.href = "https://medac.com";
+        zEnlace.innerHTML = "+ info";
+        zParrafos[2].appendChild(zEnlace);
+
+        //inserta un párrafo de color rojo entre el tercer y el cuarto párrafos
+        var zParrafoNuevo = document.createElement("p");
+        zParrafoNuevo.innerHTML = "nuevo texto con javascript";
+        zParrafoNuevo.style.color = "red";
+
+        var zBody = document.querySelectorAll("body")[0];
+        zBody.insertBefore(zParrafoNuevo, zParrafos[3]);
+
+        //elimina el segundo párrafo [1]	
+
+        zBody.removeChild(zParrafos[1]);
+        // zParrafos[1].parentNode.removeChild(zParrafos[1]);
+
+        //inserta un párrafo de color rojo entre el tercer y el cuarto párrafos
+
+
+
+        //elimina el segundo párrafo [1]
+    </script>
+
+</body>
+
+</html>

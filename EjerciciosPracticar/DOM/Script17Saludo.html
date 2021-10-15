@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saludo</title>
+</head>
+
+<body>
+    <form action="#saludo">
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="text" id="apellido" placeholder="Apellido">
+        <input type="submit" id="enviar" onclick="enviarSaludo()" value="Rellenar datos">
+    </form>
+
+    <script>
+        function enviarSaludo() {
+            //hacemos un get para guardar el valor del campo "nombre" y "apellido"
+            var nombre = document.getElementById("nombre");
+            var apellido = document.getElementById("apellido");
+            //guardamos en una variable el selector del formulario #saludo
+            var saludo = document.querySelector("#saludo");
+            //guardamos en la variable "texto" los valores del nombre y apellido y añadimos texto
+            var texto = nombre.value + " " + apellido.value + ", gracias por rellenar el formulario";
+            //mostramos la variable "texto"
+            saludo.innerHTML = texto;
+        }
+    </script>
+</body>
+
+</html>
