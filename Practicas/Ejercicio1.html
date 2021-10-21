@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calcular() {
+            let primerValor = parseInt(prompt("Dame el primer valor", ""));
+            let segundoValor = parseInt(prompt("Dame el segundo valor", ""))
+            let suma = primerValor + segundoValor;
+            let multiplicacion = primerValor * segundoValor;
+            let resta = primerValor - segundoValor;
+            console.log("Suma: " + suma);
+            console.log("Suma: " + multiplicacion);
+            console.log("Suma: " + resta);
+        }
+
+        function jugar() {
+            let aleatorio = parseInt(Math.round((Math.random() * 4) + 1));
+            let numeroUsu = parseInt(prompt("Adivina el número (entre 1 y 5"));
+            while (numeroUsu != aleatorio) {
+                if (numeroUsu < aleatorio) {
+                    alert("Te has quedado corto!!!");
+                } else {
+                    alert("Te has pasado!!!")
+                }
+                numeroUsu = parseInt(prompt("Inténtalo de nuevo (entre 1 y 5"));
+            }
+            if (numeroUsu == aleatorio) {
+                prompt("HAS ADIVINADO EL NÚMERO: " + numeroUsu);
+            }
+
+        }
+
+        function bolera() {
+            let cantidadTicket = parseInt(prompt("Bienvenido, ¿cuántos tickets quiere?", ""));
+            let precio = 10;
+            let precioFinal = 0;
+            for (let i = 1; i <= cantidadTicket; i++) {
+                let tmp = parseInt(prompt("¿Que edad tienes?"));
+                if ((tmp >= 0) && (tmp <= 5) || tmp > 65) {
+                    precioFinal++;
+                } else if ((tmp >= 6) && (tmp <= 12)) {
+                    precioFinal += (precio * 0.25);
+                } else if ((tmp >= 13) && (tmp <= 50)) {
+                    precioFinal = precioFinal + precio;
+                } else if ((tmp >= 51) && (tmp <= 65)) {
+                    precioFinal += (precio * 0.25);
+                }
+            }
+            alert("Personas: " + cantidadTicket + "\nTotal a pagar: " + precioFinal)
+        }
+
+        //Con document.write
+        function boleraSecundaria() {
+            let cantidadTicket = parseInt(prompt("Bienvenido, ¿cuántos tickets quiere?", ""));
+            let precio = 10;
+            let precioFinal = 0;
+            for (let i = 1; i <= cantidadTicket; i++) {
+                let edad = parseInt(prompt("¿Que edad tienes?"));
+                if ((edad >= 0) && (edad <= 5) || edad > 65) {
+                    precioFinal++;
+                } else if ((edad >= 6) && (edad <= 12)) {
+                    precioFinal += (precio * 0.25);
+                } else if ((edad >= 13) && (edad <= 50)) {
+                    precioFinal = precioFinal + precio;
+                } else if ((edad >= 51) && (edad <= 65)) {
+                    precioFinal += (precio * 0.25);
+                }
+            }
+            document.write("Personas: " + cantidadTicket + "</br>Total a pagar: " + precioFinal)
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Apartado 1</h1>
+    <button onclick="calcular()">Calcular</button>
+    <h1>Apartado 2</h1>
+    <button onclick="jugar();">!JUGAR¡</button>
+    <h1>Apartado 3</h1>
+    <button onclick="boleraSecundaria()">GENERAR TICKET</button>
+</body>
+
+</html>
