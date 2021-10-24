@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Dos formas de hacerlo: con maps
+
+        /*arrayNombre = new Map();
+        
+
+        for(let i=0; i<3; i++){
+            var nombre = prompt('Introduce nombre '+(i+1)+': ');
+            var edad = prompt('Introduce edad '+(i+1)+': ');
+            
+            
+            arrayNombre.set(nombre,edad);
+        }
+
+        var mayor = 0;
+        for (const valor of arrayNombre.values()) {
+            if(valor>mayor){
+                mayor = valor;
+            }
+        }
+        
+        var numMayores = 0;
+
+        for (const valor of arrayNombre.values()) {
+            if(valor==mayor){
+                numMayores++;
+            }
+        }
+        console.log(numMayores);
+
+        for (const [key, value] of arrayNombre.entries()) {
+            if(numMayores>1){
+                if(value==mayor){
+                    document.write(key+' es uno de los mayores<br>');
+                }
+            }else{
+                if(value==mayor){
+                    document.write(key+' es el mayor');
+                }
+            }
+        }*/
+
+        //Forma más simple y con más fallos:
+        var mayor = 0;
+        for(var i=0; i<3; i++){
+            var nombre = prompt('Introduce nombre '+(i+1)+': ');
+            var edad = prompt('Introduce edad '+(i+1)+': ');
+
+            if(edad>mayor){
+                mayor = edad;
+                var nombreF = nombre;
+            }
+            
+        }
+
+        document.write('El mayor es: '+nombreF);
+
+    </script>
+</body>
+</html>
