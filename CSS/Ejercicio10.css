@@ -1,3 +1,8 @@
+body{
+    display:flex;
+    justify-content: space-between;
+    background-color: black;
+}
 #div_1 {
     width: 100px;
     height: 100px;
@@ -7,10 +12,11 @@
 #div_2 {
     width: 100px;
     height: 100px;
-    background: linear-gradient(to top, #39e942, #eeff01, #ffffff);
+    background: linear-gradient(0.25turn, #39e942, #eeff01, #ffffff);
 }
 
 #div_3 {
     width: 100px;
     height: 100px;
+    background: linear-gradient(0.25turn, #e939e9, #000000, #16ffe0);
 }
