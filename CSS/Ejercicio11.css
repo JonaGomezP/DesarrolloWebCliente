@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    justify-content: space-between;
+}
+
+#div_1,
+#div_2,
+#div_3,
+#div_4,
+#div_5,
+#div_6 {
+    width: 300px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+}
+
+#div_1 {
+    background-color: darkcyan;
+}
+
+#div_2 {
+    background-color: gold;
+}
+
+#div_3 {
+    background-color: peru;
+}
+
+#div_4 {
+    background-color: darkcyan;
+}
+
+#div_5 {
+    background-color: gold;
+}
+
+#div_6 {
+    background-color: peru;
+}
