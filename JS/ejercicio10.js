@@ -1,28 +1,29 @@
 var cuerpo = document.querySelector("body");
 
-function primerBoton(){
+function primerBoton() {
     let caja = document.getElementById("div_1");
     let estilos = window.getComputedStyle(caja);
-    let color = estilos.getPropertyValue('background');
-    cuerpo.style.setProperty('background',color);  
+    let color = estilos.getPropertyValue('background-color');
+    cuerpo.style.setProperty('background', color);
 
 }
-function segundoBoton(){
+
+function segundoBoton() {
     let caja = document.getElementById("div_2");
     let estilos = window.getComputedStyle(caja);
-    let color = estilos.getPropertyValue('background');
-    cuerpo.style.setProperty('background',color);
+    let color = estilos.getPropertyValue('background-color');
+    cuerpo.style.setProperty('background', color);
 
 }
 
-function tercerBoton(){
+function tercerBoton() {
     let caja = document.getElementById("div_3");
     let estilos = window.getComputedStyle(caja);
-    let color = estilos.getPropertyValue('background');
-    cuerpo.style.setProperty('background',color);
-    
-}
-function colorOriginal(){
-    cuerpo.style.setProperty('background','black');
+    let color = estilos.getPropertyValue('background-color');
+    cuerpo.style.setProperty('background', color);
+
 }
 
+function colorOriginal() {
+    cuerpo.style.setProperty('background', 'black');
+}
