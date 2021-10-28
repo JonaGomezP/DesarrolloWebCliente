@@ -3,7 +3,8 @@ function moverImagen(valor) {
     let estilos = window.getComputedStyle(imagen);
     let derecha = parseInt(estilos.getPropertyValue("right"));
     let izquierda = parseInt(estilos.getPropertyValue("left"));
-    if (valor == "right") {
+    console.log(derecha)
+    if ((valor == "right")) {
         imagen.style.setProperty(valor, derecha - 5 + "px");
         imagen.style.setProperty("left", izquierda + 5 + "px");
         console.log(derecha)
