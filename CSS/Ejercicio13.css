@@ -1,0 +1,13 @@
+#spoiler {
+    border: solid 2px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+#textoSpoiler {
+    display: none;
+    border-top: solid 3px;
+    padding-top: 10px;
+}
