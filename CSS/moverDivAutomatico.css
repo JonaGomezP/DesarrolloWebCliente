@@ -1,0 +1,21 @@
+#cuadrado {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 50px;
+    border: solid 1px;
+    background-color: cyan;
+    box-shadow: aliceblue;
+    background-image: url("/img/parrapu.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin: 0px;
+    padding: 20px;
+}
+
+body {
+    display: flex;
+    background-color: black;
+    white-space: pre-line;
+}

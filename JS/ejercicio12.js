@@ -13,8 +13,5 @@ function moverImagen(valor) {
         imagen.style.setProperty("right", derecha + 5 + "px");
 
         console.log(izquierda)
-
     }
-
-
 }

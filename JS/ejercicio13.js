@@ -4,9 +4,9 @@ function mostrarOcultar() {
     let estado = window.getComputedStyle(parrafoSpoiler).getPropertyValue("display");
     if (estado == "none") {
         parrafoSpoiler.style.display = "block";
-        enlace.textContent = "OCULTAR"
+        enlace.textContent = "ocultar"
     } else {
         parrafoSpoiler.style.display = "none";
-        enlace.textContent = "MOSTRAR"
+        enlace.textContent = "mostrar"
     }
 }
