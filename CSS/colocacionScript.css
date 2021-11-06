@@ -1,6 +1,7 @@
 #cuadrado {
     width: 250px;
     height: 250px;
+    top:50px;
     position: absolute;
     border: solid 2px;
     background-color: cyan;

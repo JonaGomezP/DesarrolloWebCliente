@@ -1,0 +1,14 @@
+#hucha{
+    font-size: 40px;
+    display: flex;
+    width: 400px;
+    height: 400px;
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: pink;
+    border-radius: 0 0 250px 250px;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+}
