@@ -16,6 +16,8 @@ body{
     margin: 10px 0;
 }
 #botones{
+    position: relative;
+    margin: 0 auto;
     display: inline-block;
     width: auto;
     padding: 0;
@@ -39,5 +41,23 @@ input{
     left: auto;
     margin: 0;
     padding: 0;
+}
+#play{
+    background-image: url("../img/play.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover  ;
+}
+#play:hover{
+    filter: drop-shadow(0 0 0.75rem rgb(0, 255, 0));
+}
+#reset{
+    background-image: url("../img/reset.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:contain  ;
+}
+#reset:hover{
+    filter: drop-shadow(0 0 0.75rem red);
 }
 
