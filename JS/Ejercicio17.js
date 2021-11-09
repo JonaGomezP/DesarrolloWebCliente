@@ -28,12 +28,3 @@ function reiniciar() {
     }
     
 }
-
-function probar(){
-    let cajas = document.getElementsByClassName("participantes");
-    console.log(cajas[0])
-    let estilos = window.getComputedStyle(cajas[0]);
-    izquierda = estilos.getPropertyValue(left);
-    console.log(izquierda)
-    cajas[0].style.left="30px"
-}

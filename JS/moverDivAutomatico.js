@@ -4,7 +4,6 @@ window.onload = function() {
 }
 
 function mover() {
-    console.log(screen.width)
     var salto = 5;
     var elemento = document.getElementById("cuadrado");
     var estilos = getComputedStyle(elemento);
@@ -19,9 +18,4 @@ function mover() {
 
 function parar() {
     clearInterval(timer);
-    var elemento = document.getElementById("cuadrado");
-    console.log(elemento.clientWidth);
-    console.log(elemento.clientHeight);
-    console.log(elemento.offsetWidth);
-    console.log(elemento.offsetHeight);
 }
