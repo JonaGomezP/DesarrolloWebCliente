@@ -1,0 +1,15 @@
+.primera {
+    width: 400px;
+    height: 100px;
+    overflow: scroll;
+    border: solid 1px cyan;
+    font-size: larger;
+}
+
+.segunda{
+    width: 200px;
+    height: 200px;
+    overflow: scroll;
+    border: solid 1px darkred;
+    font-size: smaller;
+}
