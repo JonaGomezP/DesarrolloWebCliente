@@ -22,6 +22,7 @@ function mostrarEfecto(){
     efecto.style.position = "aboslute";
     efecto.style.top = "0";
     efecto.style.left = "0";
+    efecto.setAttribute("onclick","desaparecer()");
     padre.appendChild(efecto);
 
 
@@ -33,16 +34,18 @@ function mostrarEfecto(){
     nuevaImagen.style.position = "fixed";
     nuevaImagen.zIndex = "2";
 
-    padre.appendChild(nuevaImagen)
+    padre.appendChild(nuevaImagen);
 
     nuevaImagen.style.left = window.innerWidth/2 - nuevaImagen.offsetWidth/2 + "px";
     nuevaImagen.style.top = ((window.innerHeight/2) - (nuevaImagen.offsetHeight/2)) +"px";
     nuevaImagen.style.lineHeight = screen.availHeight + "px";
+    console.log(efecto);
 
+}
 
-
-
-
-    
-
+function desaparecer(){
+    let imagenes = document.getElementsByTagName("img");
+    let div = document.querySelector("div");
+    imagenes[1].hidden = "true";
+    div.hidden = "true";
 }

@@ -43,8 +43,25 @@ function sustituir(){
 
 
     let tabla = document.createElement("table");
-    tabla.textContent = "tr*2>td*2";
+    tabla.style.width="400px";
+    tabla.style.height="400px";
     tabla.style.border="solid 1px";
-    padre.insertBefore(contenedor, tabla);
 
+    contenedor.appendChild(tabla);
+
+    for(let i = 0; i < 2;i++){
+        let fila = document.createElement("tr");
+        tabla.appendChild(fila);
+    }
+
+    let filas = document.getElementsByTagName("tr");
+    for(let i = 0; i < 2;i++){
+        for(let j = 0; j < 2; j++){
+            let columna = document.createElement("td");
+            columna.style.border = "solid 1px";
+            filas[i].appendChild(columna);
+        }
+    }
+    padre.appendChild(contenedor);
+    padre.replaceChild(elementoDefecto, tabla);
 }
