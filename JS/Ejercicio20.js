@@ -35,3 +35,16 @@ function borrarNuevos(){
         contenedor.removeChild(hijos[0])
     }
 }
+
+function sustituir(){
+    let padre = document.querySelector("body");
+    let elementoDefecto = document.getElementsByClassName('primera');
+    let contenedor = document.querySelector("div");
+
+
+    let tabla = document.createElement("table");
+    tabla.textContent = "tr*2>td*2";
+    tabla.style.border="solid 1px";
+    padre.insertBefore(contenedor, tabla);
+
+}
