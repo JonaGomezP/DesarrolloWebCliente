@@ -38,30 +38,45 @@ function borrarNuevos(){
 
 function sustituir(){
     let padre = document.querySelector("body");
-    let elementoDefecto = document.getElementsByClassName('primera');
-    let contenedor = document.querySelector("div");
-
-
+    let elementoDefecto = document.getElementsByClassName("primera");
+    console.log(elementoDefecto[0]);
     let tabla = document.createElement("table");
     tabla.style.width="400px";
     tabla.style.height="400px";
     tabla.style.border="solid 1px";
+    padre.replaceChild(tabla,elementoDefecto[0])
 
-    contenedor.appendChild(tabla);
-
+    let coloresFondo = ["red","yellow","blue","green"];
+    let contador = 0;
+    let filas = document.getElementsByTagName("tr");
     for(let i = 0; i < 2;i++){
         let fila = document.createElement("tr");
         tabla.appendChild(fila);
-    }
-
-    let filas = document.getElementsByTagName("tr");
-    for(let i = 0; i < 2;i++){
         for(let j = 0; j < 2; j++){
-            let columna = document.createElement("td");
-            columna.style.border = "solid 1px";
-            filas[i].appendChild(columna);
+            contador ++;
+            let aleatorio = parseInt(Math.floor((Math.random() * coloresFondo.length)));
+            console.log(aleatorio)
+            let celda = document.createElement("td");
+            celda.style.border = "solid 1px";
+            celda.style.backgroundColor=coloresFondo[aleatorio];
+            celda.id = "celda" + contador;
+            celda.onclick = function(){
+                cambiarColorCeldas(celda.getAttribute("id"));
+            }
+            filas[i].appendChild(celda);
         }
     }
-    padre.appendChild(contenedor);
-    padre.replaceChild(elementoDefecto, tabla);
+}
+
+function cambiarColorCeldas (id){
+    let celda = document.getElementById(id);
+    let colorFondo = celda.style.getPropertyValue("background-color");
+    console.log(colorFondo);
+    if(colorFondo != "white"){
+        celda.style.backgroundColor = "white";
+    } else{
+        let coloresFondo = ["red","yellow","blue","green","black"];
+        let aleatorio = parseInt(Math.floor((Math.random() * coloresFondo.length)));
+        celda.style.backgroundColor = coloresFondo[aleatorio];
+    }
 }

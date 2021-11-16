@@ -33,6 +33,7 @@ function mostrarEfecto(){
     nuevaImagen.style.objectFit = "cover";
     nuevaImagen.style.position = "fixed";
     nuevaImagen.zIndex = "2";
+    nuevaImagen.id = "imgTemporal";
 
     padre.appendChild(nuevaImagen);
 
@@ -44,8 +45,9 @@ function mostrarEfecto(){
 }
 
 function desaparecer(){
-    let imagenes = document.getElementsByTagName("img");
+    let padre  = document.querySelector("body");
+    let imagen = document.getElementById("imgTemporal");
     let div = document.querySelector("div");
-    imagenes[1].hidden = "true";
-    div.hidden = "true";
+    padre.removeChild(imagen);
+    div.parentNode.removeChild(div);
 }
