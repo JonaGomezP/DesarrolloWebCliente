@@ -40,7 +40,6 @@ function mostrarEfecto(){
     nuevaImagen.style.left = window.innerWidth/2 - nuevaImagen.offsetWidth/2 + "px";
     nuevaImagen.style.top = ((window.innerHeight/2) - (nuevaImagen.offsetHeight/2)) +"px";
     nuevaImagen.style.lineHeight = screen.availHeight + "px";
-    console.log(efecto);
 
 }
 
