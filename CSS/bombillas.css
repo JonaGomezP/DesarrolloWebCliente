@@ -1,0 +1,22 @@
+body{
+    justify-content: center;
+}
+header{
+    position:relative;
+    width: 100%;
+    height: auto;
+    display: inline-flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+input{
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    width: 200px;
+     
+}
