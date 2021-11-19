@@ -48,14 +48,12 @@ function sustituir(){
 
     let coloresFondo = ["red","yellow","blue","green"];
     let contador = 0;
-    let filas = document.getElementsByTagName("tr");
     for(let i = 0; i < 2;i++){
         let fila = document.createElement("tr");
         tabla.appendChild(fila);
         for(let j = 0; j < 2; j++){
             contador ++;
             let aleatorio = parseInt(Math.floor((Math.random() * coloresFondo.length)));
-            console.log(aleatorio)
             let celda = document.createElement("td");
             celda.style.border = "solid 1px";
             celda.style.backgroundColor=coloresFondo[aleatorio];
