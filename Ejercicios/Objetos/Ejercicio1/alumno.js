@@ -113,9 +113,7 @@ function mostrarAlumno() {
 
     contenido.appendChild(tituloTutores);
 
-    for (const tmp of alumno.tutores) {
-        
-    }
+    
     alumno.tutores.forEach(tmp => {
         let lista = document.createElement("ul");
         lista.style.fontSize = "20px";
