@@ -1,4 +1,4 @@
-window.onload = function(){
+window.onload = function () {
     let body = document.querySelector("body");
     body.style.display = "flex";
     body.style.justifyContent = "center";
@@ -39,7 +39,13 @@ var listaAsignaturas = [
         nombre: "despliegue web",
         curso: 2,
         horas: 1800,
+    },
+    {
+        nombre: "prueba",
+        curso: 2,
+        horas: 1800,
     }
+
 ]
 
 var alumno = {
@@ -52,6 +58,7 @@ var alumno = {
 }
 
 
+
 function mostrarAlumno() {
     //Desahibilito el botón
     let boton = document.querySelector("input");
@@ -60,11 +67,13 @@ function mostrarAlumno() {
     //Creo el contenedor donde muestro el alumno y le aplico estilos
     let body = document.querySelector("body");
     let contenido = document.createElement("div");
-    contenido.style.width = "10000px";
-    contenido.style.backgroundColor  ="rgb(50, 50, 50)";
+    contenido.style.width = "fit-content";
+    contenido.style.backgroundColor = "rgb(50, 50, 50)";
     contenido.style.borderRadius = "10px";
-    contenido.style.boxShadow = "10px"
-    
+    contenido.style.boxShadow = "10px";
+    contenido.style.padding = "3em";
+    contenido.style.maxWidth = "1000px";
+
 
     //Nombre
     let tituloNombre = document.createElement("h2");
@@ -104,35 +113,38 @@ function mostrarAlumno() {
     contenido.appendChild(tituloCurso);
     contenido.appendChild(curso);
 
+
     //Tutores
     let tituloTutores = document.createElement("h2");
     tituloTutores.textContent = "Tutores";
     let tutores = document.createElement("div");
-    tutores.style.display = "flex";
+    tutores.hidden = false;
+    tutores.style.width = "fit-content"
     tutores.style.justifyContent = "space-around";
 
     contenido.appendChild(tituloTutores);
 
-    
+
     alumno.tutores.forEach(tmp => {
         let lista = document.createElement("ul");
         lista.style.fontSize = "20px";
         lista.style.maxWidth = tutores.maxWidth / 2;
         lista.style.padding = "15px";
         lista.style.listStylePosition = "inside";
-        
-        
-        for (const key in tmp) {
+        lista.style.width = "fit-content";
+
+
+        for (let key in tmp) {
             let elemento = document.createElement("li");
             elemento.textContent = key + ": " + tmp[key];
             lista.appendChild(elemento);
-            
+
         }
         tutores.appendChild(lista);
         contenido.appendChild(tutores);
 
     });
-    
+
 
 
 
@@ -141,14 +153,35 @@ function mostrarAlumno() {
     let tituloAsignaturas = document.createElement("h2");
     tituloAsignaturas.textContent = "Asignaturas";
     let asignaturas = document.createElement("div");
-    asignaturas.style.display = "flex";
+    asignaturas.hidden = false;
+    asignaturas.style.flexDirection = "column";
     asignaturas.style.justifyContent = "space-around";
 
     contenido.appendChild(tituloAsignaturas);
 
 
+    alumno.asignaturas.forEach(tmp => {
+        let lista = document.createElement("ul");
+        lista.style.fontSize = "20px";
+        lista.style.maxWidth = asignaturas.maxWidth / 2;
+        lista.style.padding = "15px";
+        lista.style.listStylePosition = "inside";
+        lista.style.width = "fit-content";
+        lista.style.float = "left";
+        
+
+        for (let key in tmp) {
+            let elemento = document.createElement("li");
+            elemento.textContent = key + ": " + tmp[key];
+            lista.appendChild(elemento);
+        }
+
+        asignaturas.appendChild(lista);
+        contenido.appendChild(asignaturas);
+    });
 
 
+    //Añado el contendio del alumno en el body
     body.appendChild(contenido);
 
 
@@ -172,7 +205,7 @@ function mostrarAlumno() {
         e.style.textAlign = "left";
         e.style.marginLeft = "15px";
         e.style.color = "white"
-        
+
     }
 
     //Aplicar estilo a todos las listas
@@ -183,7 +216,7 @@ function mostrarAlumno() {
         e.style.marginLeft = "15px";
         e.style.color = "white";
         e.style.backgroundColor = "black";
-        
+
     }
 
 }
