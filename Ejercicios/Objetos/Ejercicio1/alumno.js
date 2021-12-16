@@ -138,7 +138,14 @@ function mostrarAlumno() {
 
 
     //Asignaturas
+    let tituloAsignaturas = document.createElement("h2");
+    tituloAsignaturas.textContent = "Asignaturas";
     let asignaturas = document.createElement("div");
+    asignaturas.style.display = "flex";
+    asignaturas.style.justifyContent = "space-around";
+
+    contenido.appendChild(tituloAsignaturas);
+
 
 
 
