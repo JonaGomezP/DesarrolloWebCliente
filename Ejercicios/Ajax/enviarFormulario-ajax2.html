@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX y Formularios</title>
+    <link rel="stylesheet" href="estilos.css">
+<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+
+<body>
+    <!-- IMPORTANTE EL ACTION: no nos movemos por aquí, lo hacemos por JS con AJAX-->
+    <form method="POST" action="#">
+        <table>
+            <tr>
+                <td colspan=2 class="cabe"><h3>Datos de Usuario</h3></td>		
+            </tr>
+        
+            <tr>
+                <td class="letras">Usuario:</td>
+                <td><input type="text" name="usuario" placeholder="Introduce un nick..."></td>
+            </tr>
+            <tr>
+                <td class="letras">Clave:</td>
+                <td><input type="password" name="clave" placeholder="Introduce una clave"></td>
+            </tr>     
+            <tr>
+                <td class="letras">Condiciones:</td>
+                <td><input type="checkbox" name="caja" value="patata"></td>
+            </tr>   
+
+            <tr>
+                <td class="letras">Codigo:</td>
+                <td><input type="text" name="codigo" placeholder="Pon aquí tu codigo de seguridad"></td>
+            </tr> 
+            <tr>
+                <td class="letras">Codigo:</td>
+                <td>
+                    <select name="lista">
+                        <option value="op1">Opcion 1</option>
+                        <option value="op2">Opcion 2</option>
+                    </select>
+                </td>
+            </tr> 
+
+            <tr>
+                <td colspan="2" class="centrados"><input type="reset" Value="Borrar">
+                <input type="submit" value="Enviar"></td>
+            </tr>
+
+        </table>
+
+    </form>	
+    
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6da39fb12e2673a7',m:'AxAU4IUZ.INueEIFwQcSSE1Pzo1TpiZWm9K_T7iNIV4-1644310366-0-ARr7ss2IPg9dp0GE3JVqIjP87O/B1MI1Ns6OlRHi9r1gdxAyouELYD7qzvptD9JpL32uF/y44Ks2yelDF5IUkwA/j9E2gTd/3o0sJzdDmHUX2xqa1FphsIrcXj26pPE6RApPaksXi7PrKW6zyCodjEHfLb/QtnkdEC6t0xwzPWfeTV8OmE0Rhm70dqeAzGo6DFmzerFyTnXRthigiKJ0VMk=',s:[0x6633e3492c,0xa835ff1679],}})();</script></body>
+</html>
+
+<script type="text/javascript">
+            
+    document.querySelector("form").onsubmit = function(e){
+        e.preventDefault();
+        
+        //OBJETO FORMDATA
+        //FORMA 1
+        var fock = document.querySelector("form");
+        /*
+        
+        var usu = document.querySelector("[name='usuario']").value;
+        var clave = fock.clave.value;
+
+        var fd = new FormData();
+        fd.append('nepe',usu);
+        fd.append('nopor',clave);
+        */
+
+        //FORMA 2: obtengo TODO el formulario de golpe (cada campo se pasa con su name)
+        var fd = new FormData(fock);
+
+
+        //Paso 1: crear el objeto XMLHttpRequest
+        let xhr; //variable que va a almacenar el objeto
+        if(window.XMLHttpRequest){
+            xhr = new XMLHttpRequest();
+        }
+        else{
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        //Paso 2: Enviamos datos con POST
+        xhr.open('POST','http://localhost/ajax/muestraFdatos.php');
+
+         //Paso 3: crear la funciona para manejar los datos que llegan y asociarla al evento LOAD
+        xhr.addEventListener('load',function(datos){
+            let respuesta = JSON.parse(datos.target.response);
+            console.log(respuesta);
+
+        });
+
+        //Paso 4: Enviar peticion
+        xhr.send(fd);
+
+    }
+   
+
+</script>
+
